@@ -1,0 +1,13 @@
+type Item @model
+  @auth(rules: [
+    { allow: public, operations: [read] },
+    { allow: private, operations: [create, update, delete] }
+  ]) {
+  id: ID!
+  name: String! @index(name: "byName", queryField: "itemsByName")
+  description: String
+  price: Float
+  category: String @index(name: "byCategory", queryField: "itemsByCategory")
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+} 

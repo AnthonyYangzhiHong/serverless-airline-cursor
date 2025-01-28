@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-serverlessairlinecur-dev-15fa0-authRole",
+      "UnauthRoleArn": "arn:aws:iam::391170113136:role/amplify-serverlessairlinecur-dev-15fa0-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::391170113136:role/amplify-serverlessairlinecur-dev-15fa0-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-serverlessairlinecur-dev-15fa0-deployment",
+      "UnauthRoleName": "amplify-serverlessairlinecur-dev-15fa0-unauthRole",
+      "StackName": "amplify-serverlessairlinecur-dev-15fa0",
+      "StackId": "arn:aws:cloudformation:us-east-1:391170113136:stack/amplify-serverlessairlinecur-dev-15fa0/ea900a10-dd82-11ef-a135-0edfb9fb5273",
+      "AmplifyAppId": "d3xkfp39dvatu"
+    },
+    "categories": {
+      "auth": {
+        "serverlessairlinecur6730947a": {}
+      },
+      "api": {
+        "serverlessairlinecur": {}
+      }
+    }
+  }
+}
