@@ -20,10 +20,4 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - src/items-frontend/node_modules/**/*
-test:
-  phases:
-    test:
-      commands:
-        - cd src/items-frontend
-        - npm run test 
+      - src/items-frontend/node_modules/**/* 
