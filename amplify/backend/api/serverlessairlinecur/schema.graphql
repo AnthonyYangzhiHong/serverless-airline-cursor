@@ -1,7 +1,6 @@
 type Item @model
   @auth(rules: [
-    { allow: public, operations: [read] },
-    { allow: private, operations: [create, update, delete] }
+    { allow: private, operations: [create, read, update, delete] }
   ]) {
   id: ID!
   name: String! @index(name: "byName", queryField: "itemsByName")
