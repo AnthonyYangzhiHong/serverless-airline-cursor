@@ -5,12 +5,13 @@ backend:
       commands:
         - npm install -g @aws-amplify/cli
         - echo "Completed installing Amplify CLI"
+        - amplify --version
     build:
       commands:
         - echo "Starting Amplify backend push"
-        - amplify -v
+        - amplify pull --appId ${AMPLIFY_APP_ID} --envName ${AMPLIFY_ENV_NAME} --yes
         - amplify status
-        - amplify push --simple
+        - amplify push --yes
 frontend:
   phases:
     preBuild:
