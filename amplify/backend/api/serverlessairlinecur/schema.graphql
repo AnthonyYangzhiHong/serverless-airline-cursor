@@ -11,16 +11,26 @@ type Item @model
   updatedAt: AWSDateTime
 }
 
+enum AirportCode {
+  JFK
+  LAX
+  ORD
+  DFW
+  DEN
+  SFO
+  SEA
+  MIA
+  BOS
+  ATL
+}
+
 type Flight @model
   @auth(rules: [
     { allow: private, operations: [create, read, update, delete] }
   ]) {
-  departureAirportCode: String! 
-    @primaryKey(sortKeyFields: ["arrivalAirportCode", "departureDate"])
-  
-  arrivalAirportCode: String!
+  departureAirportCode: AirportCode! @primaryKey(sortKeyFields: ["arrivalAirportCode", "departureDate"])
+  arrivalAirportCode: AirportCode!
   departureDate: AWSDate!
-
   arrivalDate: AWSDate!
   airline: String!
   ticketPrice: Float!
