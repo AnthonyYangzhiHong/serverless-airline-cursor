@@ -9,4 +9,20 @@ type Item @model
   category: String @index(name: "byCategory", queryField: "itemsByCategory")
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
-} 
+}
+
+type Flight @model
+  @auth(rules: [
+    { allow: private, operations: [create, read, update, delete] }
+  ]) {
+  departureAirportCode: String! 
+    @primaryKey(sortKeyFields: ["arrivalAirportCode", "departureDate"])
+  
+  arrivalAirportCode: String!
+  departureDate: AWSDate!
+
+  arrivalDate: AWSDate!
+  airline: String!
+  ticketPrice: Float!
+  seatCapacity: Int!
+}
