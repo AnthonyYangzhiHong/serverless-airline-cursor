@@ -19,8 +19,6 @@ frontend:
         - echo "Starting frontend preBuild"
         - cd src/items-frontend
         - npm install
-        - echo "Pulling Amplify environment"
-        - amplify pull --appId ${AMPLIFY_APP_ID} --envName ${AMPLIFY_ENV_NAME} --yes
     build:
       commands:
         - echo "Starting frontend build"
