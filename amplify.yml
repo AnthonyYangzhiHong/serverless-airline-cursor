@@ -19,6 +19,8 @@ frontend:
         - echo "Starting frontend preBuild"
         - cd src/items-frontend
         - npm install
+        - echo "Copying aws-exports.js to frontend"
+        - cp ../../aws-exports.js ./src/
     build:
       commands:
         - echo "Starting frontend build"
