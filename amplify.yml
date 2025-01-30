@@ -12,8 +12,15 @@ backend:
         - amplify pull --appId ${AMPLIFY_APP_ID} --envName ${AMPLIFY_ENV_NAME} --yes
         - amplify status
         - amplify push --yes
+        - echo "Checking current directory and files"
+        - pwd
+        - ls -la
+        - echo "Creating frontend src directory if it doesn't exist"
+        - mkdir -p src/items-frontend/src
+        - echo "Checking aws-exports.js location"
+        - find . -name aws-exports.js
         - echo "Copying generated aws-exports.js"
-        - cp aws-exports.js src/items-frontend/src/
+        - cp ./aws-exports.js src/items-frontend/src/ || cp ./src/aws-exports.js src/items-frontend/src/
 frontend:
   phases:
     preBuild:
